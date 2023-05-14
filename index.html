@@ -37,7 +37,50 @@
 <!--<script src="./src/assets/usersStyle/js/aos.js"></script>-->
 <!--<script src="./src/assets/usersStyle/js/smoothscroll.js"></script>-->
 <!--<script src="src/assets/usersStyle/custom.js"></script>-->
-<script src="src/assets/custom.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.nav-link').on('click', function () {
+            $(".navbar-collapse").collapse('hide');
+        });
+
+
+        AOS.init({
+            disable: 'mobile',
+            duration: 800,
+            anchorPlacement: 'center-bottom'
+        });
+
+
+        $(function () {
+            $('.nav-link').on('click', function (event) {
+                let $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $($anchor.attr('href')).offset().top - 0
+                }, 1000);
+                event.preventDefault();
+            });
+        });
+
+
+        $('#project-slide').owlCarousel({
+            loop: true,
+            center: true,
+            autoplayHoverPause: false,
+            autoplay: true,
+            margin: 30,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                }
+            }
+        });
+
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
