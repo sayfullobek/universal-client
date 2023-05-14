@@ -1,5 +1,4 @@
 $(function () {
-
     $('.nav-link').on('click', function () {
         $(".navbar-collapse").collapse('hide');
     });
@@ -14,7 +13,7 @@ $(function () {
 
     $(function () {
         $('.nav-link').on('click', function (event) {
-            var $anchor = $(this);
+            let $anchor = $(this);
             $('html, body').stop().animate({
                 scrollTop: $($anchor.attr('href')).offset().top - 0
             }, 1000);
