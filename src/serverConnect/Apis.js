@@ -7,7 +7,8 @@ export const Apis = {
     //start attachment
     deletePhoto: '/attachment',
     sendPhoto: '/attachment/upload',
-    getPhoto: 'http://localhost:8080/api/attachment/download?id=',
+    // getPhoto: 'http://localhost:8080/api/attachment/download?id=',
+    getPhoto: 'https://universal-server.herokuapp.com/api/attachment/download?id=',
     //end attachment
 
     //start aware
